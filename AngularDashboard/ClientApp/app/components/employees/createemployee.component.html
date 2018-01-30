@@ -1,0 +1,154 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex align-items-center">
+                <h4>Create Employee</h4>
+            </div>
+            <div class="card-body" [hidden]="submitted">
+                <form (ngSubmit)="onSubmit()" class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">First Name</label>
+                                <div class="col-md-8">
+                                    <input id="firstName" [(ngModel)]="model.firstName" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Last Name</label>
+                                <div class="col-md-8">
+                                    <input id="lastName" [(ngModel)]="model.lastName" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Title</label>
+                                <div class="col-md-8">
+                                    <input id="title" [(ngModel)]="model.title" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Title of Courtesy</label>
+                                <div class="col-md-8">
+                                    <input id="titleOfCourtesy" [(ngModel)]="model.titleOfCourtesy" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Birth Date</label>
+                                <div class="col-md-8">
+                                    <input id="birthDate" [(ngModel)]="model.birthDate" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Hire Date</label>
+                                <div class="col-md-8">
+                                    <input id="hireDate" [(ngModel)]="model.hireDate" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Address</label>
+                                <div class="col-md-8">
+                                    <input id="address" [(ngModel)]="model.address" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">City</label>
+                                <div class="col-md-8">
+                                    <input id="city" [(ngModel)]="model.city" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Region</label>
+                                <div class="col-md-8">
+                                    <input id="region" [(ngModel)]="model.region" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Postal Code</label>
+                                <div class="col-md-8">
+                                    <input id="postalCode" [(ngModel)]="model.postalCode" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Country</label>
+                                <div class="col-md-8">
+                                    <input id="country" [(ngModel)]="model.country" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Home Phone</label>
+                                <div class="col-md-8">
+                                    <input id="homePhone" [(ngModel)]="model.homePhone" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Extension</label>
+                                <div class="col-md-8">
+                                    <input id="extension" [(ngModel)]="model.extension" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Notes</label>
+                                <div class="col-md-8">
+                                    <input id="notes" [(ngModel)]="model.notes" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Photo</label>
+                                <div class="col-md-8">
+                                    <input id="photoPath" [(ngModel)]="model.photoPath" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6 offset-sm-2">
+                            <input type="submit" value="Create" class="btn btn-primary"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

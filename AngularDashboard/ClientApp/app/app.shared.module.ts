@@ -9,6 +9,13 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { ProductsComponent } from './components/products/products.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { CreateTopicComponent } from "./components/employees/createemployee.component";
+
+import { ProductRepository } from "./model/product.repository";
+import { EmployeeRepository } from "./model/employee.repository";
+
 
 @NgModule({
     declarations: [
@@ -16,6 +23,9 @@ import { CounterComponent } from './components/counter/counter.component';
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
+        ProductsComponent,
+        EmployeesComponent,
+        CreateTopicComponent,
         HomeComponent
     ],
     imports: [
@@ -27,9 +37,13 @@ import { CounterComponent } from './components/counter/counter.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'products', component: ProductsComponent },
+            { path: 'employees', component: EmployeesComponent },
+            { path: 'employees/create', component: CreateTopicComponent },
             { path: '**', redirectTo: 'home' }
         ])
-    ]
+    ],
+    providers: [ProductRepository, EmployeeRepository]
 })
 export class AppModuleShared {
 }

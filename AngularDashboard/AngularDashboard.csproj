@@ -20,6 +20,27 @@
     <Content Remove="ClientApp\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\app\model\employee.model.ts" />
+    <None Remove="ClientApp\app\model\employee.repository.ts" />
+    <None Remove="ClientApp\app\model\option.model.ts" />
+    <None Remove="ClientApp\app\model\product.model.ts" />
+    <None Remove="ClientApp\app\model\product.repository.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventureWorks\AdventureWorks.csproj" />
+    <ProjectReference Include="..\Northwind\Northwind.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\model\option.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\employee.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\employee.repository.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\product.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\product.repository.ts" />
+  </ItemGroup>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
