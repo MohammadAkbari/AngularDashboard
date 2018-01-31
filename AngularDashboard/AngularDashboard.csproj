@@ -21,19 +21,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\model\address.repository.ts" />
     <None Remove="ClientApp\app\model\employee.model.ts" />
     <None Remove="ClientApp\app\model\employee.repository.ts" />
+    <None Remove="ClientApp\app\model\idName.model.ts" />
     <None Remove="ClientApp\app\model\option.model.ts" />
     <None Remove="ClientApp\app\model\product.model.ts" />
     <None Remove="ClientApp\app\model\product.repository.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AddressDb\AddressDb.csproj" />
     <ProjectReference Include="..\AdventureWorks\AdventureWorks.csproj" />
     <ProjectReference Include="..\Northwind\Northwind.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\model\address.repository.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\idName.model.ts" />
     <TypeScriptCompile Include="ClientApp\app\model\option.model.ts" />
     <TypeScriptCompile Include="ClientApp\app\model\employee.model.ts" />
     <TypeScriptCompile Include="ClientApp\app\model\employee.repository.ts" />

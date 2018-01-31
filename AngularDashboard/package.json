@@ -60,6 +60,7 @@
     "zone.js": "0.8.12"
   },
   "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0",
     "font-awesome": "^4.7.0",
     "popper.js": "http://registry.npmjs.org/popper.js/-/popper.js-1.12.9.tgz"
   }

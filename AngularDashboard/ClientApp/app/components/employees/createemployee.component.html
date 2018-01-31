@@ -1,4 +1,9 @@
-﻿<div class="row">
+﻿<ng-template #autocompletetemplate let-r="result" let-t="term">
+    {{ r.name}}
+</ng-template>
+
+
+<div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header d-flex align-items-center">
@@ -47,7 +52,14 @@
                             <div class="form-group">
                                 <label class="col-md-4">Birth Date</label>
                                 <div class="col-md-8">
-                                    <input id="birthDate" [(ngModel)]="model.birthDate" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="yyyy-mm-dd" name="birthDate" [(ngModel)]="model.birthDate" ngbDatepicker #birthDate="ngbDatepicker">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" (click)="birthDate.toggle()" type="button">
+                                                <img src="https://ng-bootstrap.github.io/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -55,43 +67,14 @@
                             <div class="form-group">
                                 <label class="col-md-4">Hire Date</label>
                                 <div class="col-md-8">
-                                    <input id="hireDate" [(ngModel)]="model.hireDate" [ngModelOptions]="{standalone:true}" class="form-control"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-4">Address</label>
-                                <div class="col-md-8">
-                                    <input id="address" [(ngModel)]="model.address" [ngModelOptions]="{standalone:true}" class="form-control"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-4">City</label>
-                                <div class="col-md-8">
-                                    <input id="city" [(ngModel)]="model.city" [ngModelOptions]="{standalone:true}" class="form-control"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-4">Region</label>
-                                <div class="col-md-8">
-                                    <input id="region" [(ngModel)]="model.region" [ngModelOptions]="{standalone:true}" class="form-control"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-md-4">Postal Code</label>
-                                <div class="col-md-8">
-                                    <input id="postalCode" [(ngModel)]="model.postalCode" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="yyyy-mm-dd" name="hireDate" [(ngModel)]="model.hireDate" ngbDatepicker #hireDate="ngbDatepicker">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" (click)="hireDate.toggle()" type="button">
+                                                <img src="https://ng-bootstrap.github.io/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +84,51 @@
                             <div class="form-group">
                                 <label class="col-md-4">Country</label>
                                 <div class="col-md-8">
-                                    <input id="country" [(ngModel)]="model.country" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                    <input name="country" type="text" class="form-control" [(ngModel)]="model.country" [ngbTypeahead]="search"
+                                           [resultTemplate]="autocompletetemplate"
+                                           [inputFormatter]="formatter" 
+                                           (selectItem)="selectCountry($event)"/> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Region</label>
+                                <div class="col-md-8">
+                                    <input name="state" type="text" class="form-control" [(ngModel)]="model.state" [ngbTypeahead]="searchState"
+                                           [resultTemplate]="autocompletetemplate"
+                                           [inputFormatter]="formatter" 
+                                           (selectItem)="selectState($event)"/> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">City</label>
+                                <div class="col-md-8">
+                                    <input name="city" type="text" class="form-control" [(ngModel)]="model.city" [ngbTypeahead]="searchCity"
+                                            [resultTemplate]="autocompletetemplate"
+                                            [inputFormatter]="formatter" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Address</label>
+                                <div class="col-md-8">
+                                    <input id="address" [(ngModel)]="model.address" [ngModelOptions]="{standalone:true}" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-4">Postal Code</label>
+                                <div class="col-md-8">
+                                    <input id="postalCode" [(ngModel)]="model.postalCode" [ngModelOptions]="{standalone:true}" class="form-control"/>
                                 </div>
                             </div>
                         </div>
