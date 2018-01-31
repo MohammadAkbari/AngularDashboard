@@ -1,0 +1,9 @@
+<div class="input-group">
+    <span class="input-group-btn">
+            <label class="btn btn-primary">
+                <span>Browse</span>...
+                <input type="file" accept="{{fileType}}"  style="display: none;" (change)="fileChange($event)" [attr.multiple] ="allowMultiple" class="form-control" />
+            </label>
+        </span>
+    <input type="text" class="form-control" [value]="displayedText" disabled="" [class.ng-invalid-right]="required && !displayedText"  [class.ng-valid-right]="required && displayedText" />
+</div>

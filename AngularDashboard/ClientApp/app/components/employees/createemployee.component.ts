@@ -1,28 +1,23 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/merge';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-
-
-
-
 import { Employee } from "./../../model/employee.model";
 import { IdName } from "./../../model/idName.model";
 import { EmployeeRepository } from "./../../model/employee.repository";
 import { AddressRepository } from "./../../model/address.repository";
 
+
 @Component({
     selector: "create-employess",
     templateUrl: "./createemployee.component.html"
 })
-export class CreateTopicComponent {
+export class CreateEmployeeComponent {
 
     model = new Employee();
     public countries: IdName[];
@@ -77,6 +72,19 @@ export class CreateTopicComponent {
         this.addressRepository.getCities(this.model.stateId)
             .subscribe(response => this.cities = response);
     } 
+
+    fileuploaderFileChange = (files: FileList) => {
+
+        if (files.length > 0) {
+
+            this.employeeRepository.fileUpload(files).subscribe(response => {
+
+                this.model.photoPath = response;
+
+                console.log(`Path: ${response}`);
+            });
+        }
+    }
 
     onSubmit() { 
 

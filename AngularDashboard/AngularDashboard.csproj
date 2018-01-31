@@ -46,6 +46,10 @@
     <TypeScriptCompile Include="ClientApp\app\model\product.repository.ts" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\employees\" />
+  </ItemGroup>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

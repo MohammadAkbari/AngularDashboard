@@ -1,5 +1,5 @@
 ﻿import { Injectable, Inject } from "@angular/core";
-import { Http } from "@angular/http";
+import { Http, RequestOptions, Headers } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import { Employee } from "./employee.model";
 import "rxjs/add/operator/map";
@@ -34,5 +34,38 @@ export class EmployeeRepository {
                 console.log(error);
                 return Observable.throw(error.json().error || "Server error");
             });
-    }  
+    }
+
+    fileUpload(files: FileList): Observable<any>{
+
+        let formData = new FormData();
+        let headers = new Headers();
+        let options = new RequestOptions();
+        options.headers = headers;
+
+        for (let j = 0; j < files.length; j++) {
+            formData.append("files", files[j], files[j].name);
+        }
+
+        return this.http.post(this.baseUrl + "api/employee/upload", formData, options)
+            .map(response => {
+
+                if (response.ok) {
+
+                    var uploadResult = response.json() as UploadResult;
+
+                    return uploadResult.path;
+                } else {
+                    console.log(response.statusText);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                return Observable.throw(error.json().error || "Server error");
+            });
+    }
+}
+
+class UploadResult {
+    path: string;
 }

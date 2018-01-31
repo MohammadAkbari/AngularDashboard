@@ -164,7 +164,10 @@
                             <div class="form-group">
                                 <label class="col-md-4">Photo</label>
                                 <div class="col-md-8">
-                                    <input id="photoPath" [(ngModel)]="model.photoPath" [ngModelOptions]="{standalone:true}" class="form-control"/>
+                                    <file-uploader [allowMultiple]="false" [fileType]="'image/*'"
+                                                   (onSelection)="fileuploaderFileChange($event)" [required]="false"></file-uploader>
+                                    
+                                    <img width="482" *ngIf="model.photoPath" src="{{ model.photoPath }}"/>
                                 </div>
                             </div>
                         </div>
