@@ -53,7 +53,7 @@
                                 <label class="col-md-4">Birth Date</label>
                                 <div class="col-md-8">
                                     <div class="input-group">
-                                        <input class="form-control" placeholder="yyyy-mm-dd" name="birthDate" [(ngModel)]="model.birthDate" ngbDatepicker #birthDate="ngbDatepicker">
+                                        <input class="form-control" placeholder="yyyy-mm-dd" name="birthDate" [(ngModel)]="model.birthDateObj" ngbDatepicker #birthDate="ngbDatepicker">
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-secondary" (click)="birthDate.toggle()" type="button">
                                                 <img src="https://ng-bootstrap.github.io/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
@@ -68,7 +68,7 @@
                                 <label class="col-md-4">Hire Date</label>
                                 <div class="col-md-8">
                                     <div class="input-group">
-                                        <input class="form-control" placeholder="yyyy-mm-dd" name="hireDate" [(ngModel)]="model.hireDate" ngbDatepicker #hireDate="ngbDatepicker">
+                                        <input class="form-control" placeholder="yyyy-mm-dd" name="hireDate" [(ngModel)]="model.hireDateObj" ngbDatepicker #hireDate="ngbDatepicker">
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-secondary" (click)="hireDate.toggle()" type="button">
                                                 <img src="https://ng-bootstrap.github.io/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
@@ -84,7 +84,7 @@
                             <div class="form-group">
                                 <label class="col-md-4">Country</label>
                                 <div class="col-md-8">
-                                    <input name="country" type="text" class="form-control" [(ngModel)]="model.country" [ngbTypeahead]="search"
+                                    <input name="country" type="text" class="form-control" [(ngModel)]="model.countryObj" [ngbTypeahead]="search"
                                            [resultTemplate]="autocompletetemplate"
                                            [inputFormatter]="formatter" 
                                            (selectItem)="selectCountry($event)"/> 
@@ -95,7 +95,7 @@
                             <div class="form-group">
                                 <label class="col-md-4">Region</label>
                                 <div class="col-md-8">
-                                    <input name="state" type="text" class="form-control" [(ngModel)]="model.state" [ngbTypeahead]="searchState"
+                                    <input name="state" type="text" class="form-control" [(ngModel)]="model.stateObj" [ngbTypeahead]="searchState"
                                            [resultTemplate]="autocompletetemplate"
                                            [inputFormatter]="formatter" 
                                            (selectItem)="selectState($event)"/> 
@@ -108,9 +108,10 @@
                             <div class="form-group">
                                 <label class="col-md-4">City</label>
                                 <div class="col-md-8">
-                                    <input name="city" type="text" class="form-control" [(ngModel)]="model.city" [ngbTypeahead]="searchCity"
+                                    <input name="city" type="text" class="form-control" [(ngModel)]="model.cityObj" [ngbTypeahead]="searchCity"
                                             [resultTemplate]="autocompletetemplate"
-                                            [inputFormatter]="formatter" />
+                                            [inputFormatter]="formatter" 
+                                            (selectItem)="selectCity($event)"/>
                                 </div>
                             </div>
                         </div>

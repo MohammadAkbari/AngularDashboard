@@ -15,12 +15,17 @@ namespace AngularDashboard.Controllers
     [Route("api/[controller]")]
     public class EmployeeController : Controller
     {
+        private readonly EmployeeRepository _employeeRepository;
+
+        public EmployeeController()
+        {
+            _employeeRepository = new EmployeeRepository();
+        }
+
         [HttpGet("[action]")]
         public async Task<IEnumerable<Employee>> List()
         {
-            var repository = new EmployeeRepository();
-
-            var list = await repository.GetList(36);
+            var list = await _employeeRepository.GetList(36);
 
             return list;
         }
@@ -28,6 +33,8 @@ namespace AngularDashboard.Controllers
         [HttpPost("[action]")]
         public IActionResult Create([FromBody]Employee employee)
         {
+            _employeeRepository.Create(employee);
+
             return Ok();
         }
 

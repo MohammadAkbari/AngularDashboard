@@ -23,7 +23,7 @@ namespace Northwind
         public async Task<List<Employee>> GetList(int count)
         {
             var list = await _dbContext.Employees
-                .Find(e => e.EmployeeId > 0)
+                .Find(e => e.EmployeeId != null)
                 .Limit(count)
                 .ToListAsync();
 
@@ -33,6 +33,11 @@ namespace Northwind
             });
 
             return list;
+        }
+
+        public void Create(Employee employee)
+        {
+            _dbContext.Employees.InsertOne(employee);
         }
     }
 }

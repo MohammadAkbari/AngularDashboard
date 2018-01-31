@@ -1,4 +1,5 @@
 ﻿import { IdName } from "./idname.model";
+import { NgbDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-date';
 
 export class Employee {
      employeeId: number;
@@ -6,18 +7,24 @@ export class Employee {
      firstName: string;
      title: string;
      titleOfCourtesy: string;
-     birthDate: Date;
-     hireDate: Date;
+     birthDate: string;
+     hireDate: string;
      address: string;
-     city: string;
-     region: string;
      postalCode: string;
-     countryId: number;
-     country: IdName;
+     country: string;
+     region: string;
+     city: string;
      homePhone: string;
      extension: string;
      photoBase64: string;
      notes: string;
      photoPath: string;
-     stateId: number;
+}
+
+export class ExtendedEmployee extends Employee {
+    countryObj: IdName;
+    regionObj: IdName;
+    cityObj: IdName;
+    birthDateObj: NgbDate;
+    hireDateObj: NgbDate;
 }

@@ -31,6 +31,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="ClientApp\app\components\app\avatar.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AddressDb\AddressDb.csproj" />
     <ProjectReference Include="..\AdventureWorks\AdventureWorks.csproj" />
     <ProjectReference Include="..\Northwind\Northwind.csproj" />

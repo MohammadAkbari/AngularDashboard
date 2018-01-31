@@ -7,7 +7,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { Employee } from "./../../model/employee.model";
+import { Employee, ExtendedEmployee } from "./../../model/employee.model";
 import { IdName } from "./../../model/idName.model";
 import { EmployeeRepository } from "./../../model/employee.repository";
 import { AddressRepository } from "./../../model/address.repository";
@@ -19,10 +19,11 @@ import { AddressRepository } from "./../../model/address.repository";
 })
 export class CreateEmployeeComponent {
 
-    model = new Employee();
+    model = new ExtendedEmployee();
     public countries: IdName[];
     public states: IdName[];
     public cities: IdName[];
+
 
     constructor(private employeeRepository: EmployeeRepository, private addressRepository: AddressRepository, private router: Router) {
 
@@ -58,18 +59,20 @@ export class CreateEmployeeComponent {
     formatter = (x: IdName) => x.name;
 
     selectCountry = (event: any) => {
-
-        this.model.countryId = event.item.id;
-
-        this.addressRepository.getStates(this.model.countryId)
+        this.model.country = event.item.name;
+        this.addressRepository.getStates(event.item.id)
             .subscribe(response => this.states = response);
     } 
 
     selectState = (event: any) => {
+        this.model.region = event.item.name;
+        this.addressRepository.getCities(event.item.id)
+            .subscribe(response => this.cities = response);
+    } 
 
-        this.model.stateId = event.item.id;
-
-        this.addressRepository.getCities(this.model.stateId)
+    selectCity = (event: any) => {
+        this.model.city = event.item.name;
+        this.addressRepository.getCities(event.item.id)
             .subscribe(response => this.cities = response);
     } 
 
@@ -78,9 +81,7 @@ export class CreateEmployeeComponent {
         if (files.length > 0) {
 
             this.employeeRepository.fileUpload(files).subscribe(response => {
-
                 this.model.photoPath = response;
-
                 console.log(`Path: ${response}`);
             });
         }
@@ -88,8 +89,26 @@ export class CreateEmployeeComponent {
 
     onSubmit() { 
 
-        this.employeeRepository.create(this.model).subscribe(response => {
-            this.router.navigateByUrl("/employees");
+        var employee = new Employee();
+
+        employee.lastName = this.model.lastName;
+        employee.firstName = this.model.firstName;
+        employee.title = this.model.title;
+        employee.titleOfCourtesy = this.model.titleOfCourtesy;
+        employee.birthDate = `${this.model.birthDateObj.year}/${this.model.birthDateObj.month}/${this.model.birthDateObj.day}`;
+        employee.hireDate = `${this.model.hireDateObj.year}/${this.model.hireDateObj.month}/${this.model.hireDateObj.day}`;
+        employee.address = this.model.address;
+        employee.postalCode = this.model.postalCode;
+        employee.country = this.model.country;
+        employee.region = this.model.region;
+        employee.city = this.model.city;
+        employee.homePhone = this.model.homePhone;
+        employee.extension = this.model.extension;
+        employee.notes = this.model.notes;
+        employee.photoPath = this.model.photoPath;
+
+        this.employeeRepository.create(employee).subscribe(response => {
+            //this.router.navigateByUrl("/employees");
         });
     }
 }

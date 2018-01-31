@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace Northwind.Models
@@ -8,7 +9,7 @@ namespace Northwind.Models
     public class Employee
     {
         [BsonId]
-        public int EmployeeId { get; set; }
+        public ObjectId EmployeeId { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Title { get; set; }
