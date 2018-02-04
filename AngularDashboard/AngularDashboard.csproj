@@ -9,6 +9,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +41,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AddressDb\AddressDb.csproj" />
     <ProjectReference Include="..\AdventureWorks\AdventureWorks.csproj" />
+    <ProjectReference Include="..\Membership\Membership.csproj" />
     <ProjectReference Include="..\Northwind\Northwind.csproj" />
   </ItemGroup>
 

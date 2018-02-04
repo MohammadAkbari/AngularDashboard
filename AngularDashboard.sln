@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularDashboard", "AngularDashboard\AngularDashboard.csproj", "{C200391C-7B91-4A91-9573-03748EA6229A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularDashboard", "AngularDashboard\AngularDashboard.csproj", "{C200391C-7B91-4A91-9573-03748EA6229A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks", "AdventureWorks\AdventureWorks.csproj", "{F6460A74-83AF-470F-8E06-173E2F01F142}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventureWorks", "AdventureWorks\AdventureWorks.csproj", "{F6460A74-83AF-470F-8E06-173E2F01F142}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind", "Northwind\Northwind.csproj", "{D73B99A1-A0A6-4D8E-BB80-21D9ED54355C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind", "Northwind\Northwind.csproj", "{D73B99A1-A0A6-4D8E-BB80-21D9ED54355C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressDb", "AddressDb\AddressDb.csproj", "{5AF8026A-F906-4CD5-8010-57BB7146ABB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressDb", "AddressDb\AddressDb.csproj", "{5AF8026A-F906-4CD5-8010-57BB7146ABB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership", "Membership\Membership.csproj", "{29AE69B9-740A-4819-B9BF-B2F226562939}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5AF8026A-F906-4CD5-8010-57BB7146ABB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AF8026A-F906-4CD5-8010-57BB7146ABB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AF8026A-F906-4CD5-8010-57BB7146ABB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29AE69B9-740A-4819-B9BF-B2F226562939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29AE69B9-740A-4819-B9BF-B2F226562939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29AE69B9-740A-4819-B9BF-B2F226562939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29AE69B9-740A-4819-B9BF-B2F226562939}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
