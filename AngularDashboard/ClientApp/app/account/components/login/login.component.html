@@ -1,0 +1,25 @@
+<div class="page login-page">
+    <div class="container">
+        <div class="form-outer text-center d-flex align-items-center">
+            <div class="form-inner">
+                <div class="logo text-uppercase"><span>Bootstrap</span><strong class="text-primary">Dashboard</strong></div>
+                <p>&nbsp;</p>
+                <form (ngSubmit)="onSubmit()" id="login-form" method="post">
+                    <div class="form-group-material">
+                        <input id="login-username" type="text" name="username" [(ngModel)]="model.username" required class="input-material">
+                        <label for="login-username" class="label-material active">Username</label>
+                    </div>
+                    <div class="form-group-material">
+                        <input id="login-password" type="password" name="password" [(ngModel)]="model.password"  required class="input-material">
+                        <label for="login-password" class="label-material active">Password</label>
+                    </div>
+                    <input id="login" type="submit" value="Login" class="btn btn-primary"/>
+                </form>
+                <a href="#" class="forgot-pass">Forgot Password?</a><small>Do not have an account? </small><a href="register.html" class="signup">Signup</a>
+            </div>
+            <div class="copyrights text-center">
+                <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>
+            </div>
+        </div>
+    </div>
+</div>

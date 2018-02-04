@@ -25,17 +25,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\model\address.repository.ts" />
-    <None Remove="ClientApp\app\model\employee.model.ts" />
-    <None Remove="ClientApp\app\model\employee.repository.ts" />
-    <None Remove="ClientApp\app\model\idName.model.ts" />
-    <None Remove="ClientApp\app\model\option.model.ts" />
-    <None Remove="ClientApp\app\model\product.model.ts" />
-    <None Remove="ClientApp\app\model\product.repository.ts" />
+    <None Remove="ClientApp\app\account\model\credential.model.ts" />
+    <None Remove="ClientApp\app\account\model\login.model.ts" />
+    <None Remove="ClientApp\app\account\model\user.manager.ts" />
+    <None Remove="ClientApp\app\dashboard\model\address.repository.ts" />
+    <None Remove="ClientApp\app\dashboard\model\employee.model.ts" />
+    <None Remove="ClientApp\app\dashboard\model\employee.repository.ts" />
+    <None Remove="ClientApp\app\dashboard\model\idName.model.ts" />
+    <None Remove="ClientApp\app\dashboard\model\option.model.ts" />
+    <None Remove="ClientApp\app\dashboard\model\product.model.ts" />
+    <None Remove="ClientApp\app\dashboard\model\product.repository.ts" />
+    <None Remove="ClientApp\app\share\auth.guard.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="ClientApp\app\components\app\avatar.png" />
+    <Content Include="ClientApp\app\dashboard\components\app\avatar.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,13 +50,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\model\address.repository.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\idName.model.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\option.model.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\employee.model.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\employee.repository.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\product.model.ts" />
-    <TypeScriptCompile Include="ClientApp\app\model\product.repository.ts" />
+    <TypeScriptCompile Include="ClientApp\app\share\credential.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\account\model\login.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\share\user.manager.ts" />
+    <TypeScriptCompile Include="ClientApp\app\dashboard\model\address.repository.ts" />
+    <TypeScriptCompile Include="ClientApp\app\dashboard\model\idName.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\dashboard\model\option.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\dashboard\model\employee.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\dashboard\model\employee.repository.ts" />
+    <TypeScriptCompile Include="ClientApp\app\dashboard\model\product.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\dashboard\model\product.repository.ts" />
+    <TypeScriptCompile Include="ClientApp\app\share\auth.guard.ts" />
   </ItemGroup>
 
   <ItemGroup>

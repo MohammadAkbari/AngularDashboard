@@ -25,23 +25,23 @@ namespace AngularDashboard.Controllers
             _jwtOptions = jwtOptions.Value;
         }
 
-        // POST api/auth/login
-        [HttpPost("login")]
-        public async Task<IActionResult> Post([FromBody]CredentialsViewModel credentials)
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Login([FromBody]CredentialsViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var identity = await GetClaimsIdentity(credentials.UserName, credentials.Password);
+            var identity = await GetClaimsIdentity(model.UserName, model.Password);
             if (identity == null)
             {
                 return BadRequest(Errors.AddErrorToModelState("login_failure", "Invalid username or password.", ModelState));
             }
 
-          var jwt = await Tokens.GenerateJwt(identity, _jwtFactory, credentials.UserName, _jwtOptions, new JsonSerializerSettings { Formatting = Formatting.Indented });
-          return new OkObjectResult(jwt);
+            var jwt = await Tokens.GenerateJwt(identity, _jwtFactory, model.UserName, _jwtOptions, new JsonSerializerSettings { Formatting = Formatting.Indented });
+
+            return Ok(jwt);
         }
 
         private async Task<ClaimsIdentity> GetClaimsIdentity(string userName, string password)

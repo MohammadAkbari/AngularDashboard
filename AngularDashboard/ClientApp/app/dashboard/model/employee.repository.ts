@@ -11,15 +11,27 @@ export class EmployeeRepository {
     constructor(private http: Http, @Inject("BASE_URL") private baseUrl: string) {
     }
 
+    getHeader(): Headers {
+        const headers = new Headers();
+        const authToken = localStorage.getItem("auth_token");
+        headers.append("Authorization", `Bearer ${authToken}`);
+
+        return headers;
+    }
+
     getList(): Observable<Employee[]> {
 
-        return this.http.get(this.baseUrl + "api/employee/list")
+        const headers = this.getHeader();
+
+        return this.http.get(this.baseUrl + "api/employee/list", { headers})
             .map(response => response.json() as Employee[]);
     }
 
     create(employee: Employee): Observable<any> {
 
-        return this.http.post(this.baseUrl + "api/employee/create", employee)
+        const headers = this.getHeader();
+
+        return this.http.post(this.baseUrl + "api/employee/create", employee, { headers })
             .map(response => {
 
                 if (response.ok) {
@@ -38,10 +50,10 @@ export class EmployeeRepository {
 
     fileUpload(files: FileList): Observable<any>{
 
-        let formData = new FormData();
-        let headers = new Headers();
-        let options = new RequestOptions();
-        options.headers = headers;
+        const options = new RequestOptions();
+        options.headers = this.getHeader();
+
+        const formData = new FormData();
 
         for (let j = 0; j < files.length; j++) {
             formData.append("files", files[j], files[j].name);

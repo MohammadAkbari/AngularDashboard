@@ -13,6 +13,7 @@ using Northwind.Models;
 namespace AngularDashboard.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     public class EmployeeController : Controller
     {
         private readonly EmployeeRepository _employeeRepository;

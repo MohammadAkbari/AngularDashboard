@@ -24,7 +24,6 @@ export class CreateEmployeeComponent {
     public states: IdName[];
     public cities: IdName[];
 
-
     constructor(private employeeRepository: EmployeeRepository, private addressRepository: AddressRepository, private router: Router) {
 
         this.addressRepository.getCountries()
@@ -108,7 +107,7 @@ export class CreateEmployeeComponent {
         employee.photoPath = this.model.photoPath;
 
         this.employeeRepository.create(employee).subscribe(response => {
-            //this.router.navigateByUrl("/employees");
+            this.router.navigateByUrl("/employees");
         });
     }
 }
