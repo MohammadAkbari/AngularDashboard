@@ -17,6 +17,7 @@
       "version": "4.2.5",
       "resolved": "https://registry.npmjs.org/@angular/common/-/common-4.2.5.tgz",
       "integrity": "sha1-TVCpW0RM1Yz3BvDandFAfTuDNi4=",
+      "dev": true,
       "requires": {
         "tslib": "1.7.1"
       }
@@ -25,6 +26,7 @@
       "version": "4.2.5",
       "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-4.2.5.tgz",
       "integrity": "sha1-tIZ0x0VrKw3xBy1w5OZnr4bN34M=",
+      "dev": true,
       "requires": {
         "tslib": "1.7.1"
       }
@@ -52,6 +54,7 @@
       "version": "4.2.5",
       "resolved": "https://registry.npmjs.org/@angular/core/-/core-4.2.5.tgz",
       "integrity": "sha1-YcG1iFwmIzLXN/vg9dcRUXWahGQ=",
+      "dev": true,
       "requires": {
         "tslib": "1.7.1"
       }
@@ -3817,7 +3820,8 @@
     "jquery": {
       "version": "3.2.1",
       "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.2.1.tgz",
-      "integrity": "sha1-XE2d5lKvbNCncBVKYxu6ErAVx4c="
+      "integrity": "sha1-XE2d5lKvbNCncBVKYxu6ErAVx4c=",
+      "dev": true
     },
     "js-base64": {
       "version": "2.1.9",
@@ -4336,28 +4340,6 @@
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz",
       "integrity": "sha1-KzJxhOiZIQEXeyhWP7XnECrNDKk=",
       "dev": true
-    },
-    "ng4-file-upload": {
-      "version": "1.0.4",
-      "resolved": "https://registry.npmjs.org/ng4-file-upload/-/ng4-file-upload-1.0.4.tgz",
-      "integrity": "sha512-rvhyXXG3B+yG4UYvw+6pyTGPEUhLNUdUIsXDU6rbRMXzIKFl5vv9R76Rmj8K7M53JiNrCyhgNFK3E0VDA+GoSg==",
-      "requires": {
-        "@angular/common": "4.2.5",
-        "@angular/compiler": "4.2.5",
-        "@angular/core": "4.2.5",
-        "bootstrap": "4.0.0-alpha.6"
-      },
-      "dependencies": {
-        "bootstrap": {
-          "version": "4.0.0-alpha.6",
-          "resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.0.0-alpha.6.tgz",
-          "integrity": "sha1-T1TdM6wN6sOyhAe8LffsYIhpycg=",
-          "requires": {
-            "jquery": "3.2.1",
-            "tether": "1.4.3"
-          }
-        }
-      }
     },
     "no-case": {
       "version": "2.3.1",
@@ -6326,11 +6308,6 @@
       "integrity": "sha1-IGvo4YiGC1FEJTdebxrom/sB/Y0=",
       "dev": true
     },
-    "tether": {
-      "version": "1.4.3",
-      "resolved": "https://registry.npmjs.org/tether/-/tether-1.4.3.tgz",
-      "integrity": "sha512-YCfE/Ym9MpZpzUmzbek7MiLEyTofxx2YS0rJfSOUXX0aZtfQgxcgw7/Re2oGJUsREWZtEF0DzBKCjqH+DzgL6A=="
-    },
     "through": {
       "version": "2.3.8",
       "resolved": "https://registry.npmjs.org/through/-/through-2.3.8.tgz",
@@ -6472,7 +6449,8 @@
     "tslib": {
       "version": "1.7.1",
       "resolved": "https://registry.npmjs.org/tslib/-/tslib-1.7.1.tgz",
-      "integrity": "sha1-vIAEFkaRkjp5/oN4u+s9ogF1OOw="
+      "integrity": "sha1-vIAEFkaRkjp5/oN4u+s9ogF1OOw=",
+      "dev": true
     },
     "tty-browserify": {
       "version": "0.0.0",

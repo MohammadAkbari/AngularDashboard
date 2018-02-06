@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind", "Northwind\Nort
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressDb", "AddressDb\AddressDb.csproj", "{5AF8026A-F906-4CD5-8010-57BB7146ABB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership", "Membership\Membership.csproj", "{29AE69B9-740A-4819-B9BF-B2F226562939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Membership", "Membership\Membership.csproj", "{29AE69B9-740A-4819-B9BF-B2F226562939}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactSample", "ReactSample\ReactSample.csproj", "{46A7D399-B461-4E2F-B54C-EFA665F9F732}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{29AE69B9-740A-4819-B9BF-B2F226562939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29AE69B9-740A-4819-B9BF-B2F226562939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29AE69B9-740A-4819-B9BF-B2F226562939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A7D399-B461-4E2F-B54C-EFA665F9F732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A7D399-B461-4E2F-B54C-EFA665F9F732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A7D399-B461-4E2F-B54C-EFA665F9F732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A7D399-B461-4E2F-B54C-EFA665F9F732}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
