@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 
 namespace WebApplication3
 {
@@ -32,11 +35,6 @@ namespace WebApplication3
             {
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
-                //app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
-                //{
-                //    HotModuleReplacement = true,
-                //    ReactHotModuleReplacement = true
-                //});
             }
             else
             {
@@ -44,6 +42,13 @@ namespace WebApplication3
             }
 
             app.UseStaticFiles();
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"ClientApp")),
+                RequestPath = new PathString("/ClientApp")
+            });
+
 
             app.UseMvc(routes =>
             {

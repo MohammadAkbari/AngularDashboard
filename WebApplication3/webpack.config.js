@@ -1,10 +1,17 @@
-﻿const path = require("path")
+/// <binding ProjectOpened='Watch - Development' />
+const path = require("path");
+const webpack = require('webpack');
+//const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+const bundleOutputDir = './wwwroot/dist';
 
 module.exports = {
-    entry: "./ClientApp/index.js",
+    entry: {
+        index: "./ClientApp/index.js"
+    },
     output: {
-        filename: "bundle.js",
-        path: path.join(__dirname, "wwwroot/dist")
+        filename: "[name].bundle.js",
+        path: path.resolve(__dirname, bundleOutputDir)
     },
     module: {
         rules: [
@@ -24,7 +31,27 @@ module.exports = {
                     { loader: "style-loader" },
                     { loader: "css-loader" }
                 ]
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192
+                        }
+                    }
+                ]
             }
         ]
-    }
+    },
+    plugins: [
+
+        new webpack.SourceMapDevToolPlugin({
+            filename: '[file].map', // Remove this line if you prefer inline source maps
+            moduleFilenameTemplate: path.relative(bundleOutputDir, '[resourcePath]') // Point sourcemap entries to the original file locations on disk
+        })
+
+        //new UglifyJsPlugin()
+    ]
 }
