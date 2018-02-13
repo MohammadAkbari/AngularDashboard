@@ -1,57 +1,72 @@
 /// <binding ProjectOpened='Watch - Development' />
-const path = require("path");
-const webpack = require('webpack');
-//const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+const path = require('path');
+const webpack = require('webpack');
 const bundleOutputDir = './wwwroot/dist';
 
-module.exports = {
-    entry: {
-        index: "./ClientApp/index.js"
-    },
-    output: {
-        filename: "[name].bundle.js",
-        path: path.resolve(__dirname, bundleOutputDir)
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ["env", "stage-0", "react"]
-                    }
-                }
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    { loader: "style-loader" },
-                    { loader: "css-loader" }
-                ]
-            },
-            {
-                test: /\.(png|jpg|jpeg|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
+module.exports = (env) => {
+    const isDevBuild = !(env && env.prod);
+    return [{
+        stats: { modules: false },
+        entry: {
+            index: "./ClientApp/index.js"
+        },
+        resolve: { extensions: ['.js'] },
+        resolveLoader: {
+            modules: ['node_modules', path.resolve(__dirname, 'loaders')]
+        },
+        output: {
+            path: path.join(__dirname, bundleOutputDir),
+            filename: '[name].js',
+            publicPath: 'dist/'
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    include: /ClientApp/,
+                    use: [{
+                        loader: "babel-loader",
                         options: {
-                            limit: 8192
+                            presets: ["env", "stage-0", "react"]
                         }
-                    }
-                ]
-            }
-        ]
-    },
-    plugins: [
-
-        new webpack.SourceMapDevToolPlugin({
-            filename: '[file].map', // Remove this line if you prefer inline source maps
-            moduleFilenameTemplate: path.relative(bundleOutputDir, '[resourcePath]') // Point sourcemap entries to the original file locations on disk
-        })
-
-        //new UglifyJsPlugin()
-    ]
-}
+                    },
+                    {
+                        loader: "barloader"
+                    }]
+                },
+                {
+                    test: /\.css$/,
+                    use: [
+                        { loader: "style-loader" },
+                        { loader: "css-loader" }
+                    ]
+                },
+                {
+                    test: /\.(png|jpg|jpeg|gif|svg)$/,
+                    use: [
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 8192
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        plugins: [
+            new webpack.DllReferencePlugin({
+                context: __dirname,
+                manifest: require('./wwwroot/dist/vendor-manifest.json')
+            })
+        ].concat(isDevBuild ? [
+            new webpack.SourceMapDevToolPlugin({
+                filename: '[file].map',
+                moduleFilenameTemplate: path.relative(bundleOutputDir, '[resourcePath]')
+            })
+        ] : [
+            new webpack.optimize.UglifyJsPlugin()
+        ])
+    }];
+};
