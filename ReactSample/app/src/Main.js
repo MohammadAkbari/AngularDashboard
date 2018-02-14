@@ -5,9 +5,10 @@ import Home from './Home';
 import Roster from './Roster';
 import Schedule from './Schedule';
 import Users from './Users';
-import ReduxSample from './ReduxSample'
-import BankAppEntrance from './bank/BankAppEntrance'
-import AirlineEntrance from './airline/AirlineEntrance'
+import ReduxSample from './ReduxSample';
+import BankAppEntrance from './bank/BankAppEntrance';
+import AirlineEntrance from './airline/AirlineEntrance';
+import ContactsApp from './contacts/ContactsApp';
 
 class Main extends Component {
     render() {
@@ -21,6 +22,7 @@ class Main extends Component {
                     <Route path='/redux' component={ReduxSample} />
                     <Route path='/bank' component={BankAppEntrance} />
                     <Route path='/airline' component={AirlineEntrance} />
+                    <Route path='/contacts' component={ContactsApp} />
                 </Switch>
             </main>
         );

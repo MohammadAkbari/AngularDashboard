@@ -27,6 +27,9 @@ class Header extends Component {
                     <li className="nav-item">
                         <Link to='/airline' className="nav-link">AirCheap</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to='/contacts' className="nav-link">Contacts</Link>
+                    </li>
                 </ul>
                 <hr/>
             </header>
