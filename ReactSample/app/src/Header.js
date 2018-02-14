@@ -18,6 +18,15 @@ class Header extends Component {
                     <li className="nav-item">
                         <Link to='/users' className="nav-link">Users</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to='/redux' className="nav-link">Redux</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to='/bank' className="nav-link">Bank</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to='/airline' className="nav-link">AirCheap</Link>
+                    </li>
                 </ul>
                 <hr/>
             </header>

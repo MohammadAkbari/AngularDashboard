@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication3", "WebAppli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactSpa", "ReactSpa\ReactSpa.csproj", "{38C9C9DC-C08F-4E4B-BC4A-C711EE60857B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc", "Mvc\Mvc.csproj", "{F150B388-31BE-444F-B2CB-56B1D3659227}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mvc", "Mvc\Mvc.csproj", "{F150B388-31BE-444F-B2CB-56B1D3659227}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduxSpa", "ReduxSpa\ReduxSpa.csproj", "{CE22711D-15EF-487E-A329-8BA693CA3533}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{F150B388-31BE-444F-B2CB-56B1D3659227}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F150B388-31BE-444F-B2CB-56B1D3659227}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F150B388-31BE-444F-B2CB-56B1D3659227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE22711D-15EF-487E-A329-8BA693CA3533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE22711D-15EF-487E-A329-8BA693CA3533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE22711D-15EF-487E-A329-8BA693CA3533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE22711D-15EF-487E-A329-8BA693CA3533}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

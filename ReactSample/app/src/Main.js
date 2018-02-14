@@ -5,6 +5,9 @@ import Home from './Home';
 import Roster from './Roster';
 import Schedule from './Schedule';
 import Users from './Users';
+import ReduxSample from './ReduxSample'
+import BankAppEntrance from './bank/BankAppEntrance'
+import AirlineEntrance from './airline/AirlineEntrance'
 
 class Main extends Component {
     render() {
@@ -15,6 +18,9 @@ class Main extends Component {
                     <Route path='/roster' component={Roster} />
                     <Route path='/schedule' component={Schedule} />
                     <Route path='/users' component={Users} />
+                    <Route path='/redux' component={ReduxSample} />
+                    <Route path='/bank' component={BankAppEntrance} />
+                    <Route path='/airline' component={AirlineEntrance} />
                 </Switch>
             </main>
         );

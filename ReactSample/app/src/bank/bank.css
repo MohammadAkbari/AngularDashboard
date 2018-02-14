@@ -1,0 +1,23 @@
+﻿.atm {
+    width: 700px;
+    border-radius: 10px;
+    background-color: #1D4F27;
+    margin: 10px auto 0 auto;
+    padding: 20px;
+}
+.atm input {
+    font-size: 18px;
+    width: 272px;
+    margin-right:20px;
+}
+.atm button {
+    margin: 20px 5px;
+    padding: 2px 40px;
+    cursor:pointer;
+}
+.exchange--visible{
+    display:block;
+}
+.exchange--closed{
+    display:none;
+}
