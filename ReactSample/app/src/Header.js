@@ -1,34 +1,34 @@
 ﻿import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     render() {
         return (
             <header>
                 <ul className="nav">
-                    <li className="nav-item active">
-                        <Link to='/' className="nav-link">Home</Link>
+                    <li className="nav-item">
+                        <NavLink exact={true} to='/' className="nav-link" activeClassName="active">Home</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link to='/roster' className="nav-link">Roster</Link>
+                        <NavLink to='/roster' className="nav-link" activeClassName="active">Roster</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link to='/schedule' className="nav-link">Schedule</Link>
+                        <NavLink to='/schedule' className="nav-link" activeClassName="active">Schedule</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link to='/users' className="nav-link">Users</Link>
+                        <NavLink to='/users' className="nav-link" activeClassName="active">Users</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link to='/redux' className="nav-link">Redux</Link>
+                        <NavLink to='/redux' className="nav-link" activeClassName="active">Redux</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link to='/bank' className="nav-link">Bank</Link>
+                        <NavLink to='/bank' className="nav-link" activeClassName="active">Bank</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link to='/airline' className="nav-link">AirCheap</Link>
+                        <NavLink to='/airline' className="nav-link" activeClassName="active">AirCheap</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link to='/contacts' className="nav-link">Contacts</Link>
+                        <NavLink to='/contacts' className="nav-link" activeClassName="active">Contacts</NavLink>
                     </li>
                 </ul>
                 <hr/>
