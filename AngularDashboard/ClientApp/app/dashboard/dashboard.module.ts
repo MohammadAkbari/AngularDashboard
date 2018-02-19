@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -37,11 +36,10 @@ import { AuthGuard } from "../share/auth.guard";
         CommonModule,
         HttpModule,
         FormsModule,
-        BrowserModule,
         NgbModule.forRoot(),
         RouterModule.forChild([
             {
-                path: "dashboard",
+                path: "",
                 component: AppComponent, canActivate: [AuthGuard],
                 children: [
                     { path: "", redirectTo: 'home', pathMatch: 'full' },

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularDashboard", "AngularDashboard\AngularDashboard.csproj", "{C200391C-7B91-4A91-9573-03748EA6229A}"
 EndProject
@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactSpa", "ReactSpa\ReactS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mvc", "Mvc\Mvc.csproj", "{F150B388-31BE-444F-B2CB-56B1D3659227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduxSpa", "ReduxSpa\ReduxSpa.csproj", "{CE22711D-15EF-487E-A329-8BA693CA3533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReduxSpa", "ReduxSpa\ReduxSpa.csproj", "{CE22711D-15EF-487E-A329-8BA693CA3533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactDashboard", "ReactDashboard\ReactDashboard.csproj", "{219C63AD-EAD8-4E51-87AD-18ACD4F57894}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{CE22711D-15EF-487E-A329-8BA693CA3533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE22711D-15EF-487E-A329-8BA693CA3533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE22711D-15EF-487E-A329-8BA693CA3533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{219C63AD-EAD8-4E51-87AD-18ACD4F57894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219C63AD-EAD8-4E51-87AD-18ACD4F57894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219C63AD-EAD8-4E51-87AD-18ACD4F57894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219C63AD-EAD8-4E51-87AD-18ACD4F57894}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,6 +9,7 @@
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-document-title": "^2.0.3",
     "react-dom": "16.2.0",
     "react-js-pagination": "^3.0.1",
     "react-paginate": "^5.0.0",

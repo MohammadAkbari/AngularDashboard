@@ -5,10 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { DashboardModule } from './dashboard/dashboard.module';
-import { AccountModule } from './account/account.module';
-
 import { AppComponent } from './app.component';
+import { AuthGuard2 } from "./share/auth.guard";
+import { UserManager } from './share/user.manager';
 
 @NgModule({
     declarations: [
@@ -19,13 +18,14 @@ import { AppComponent } from './app.component';
         HttpModule,
         FormsModule,
         BrowserModule,
-        DashboardModule,
-        AccountModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+            { path: 'dashboard', canLoad: [AuthGuard2], loadChildren: './dashboard/dashboard.module#DashboardModule' },
+            { path: 'account', loadChildren: './account/account.module#AccountModule' },
             { path: '**', redirectTo: 'home'  }
         ])
-    ]
+    ],
+    providers: [UserManager, AuthGuard2]
 })
 export class AppModuleShared {
 }

@@ -1,13 +1,11 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
 import { LoginComponent } from './components/login/login.component';
-import { UserManager } from './../share/user.manager';
 
 @NgModule({
     declarations: [
@@ -18,10 +16,9 @@ import { UserManager } from './../share/user.manager';
         CommonModule,
         HttpModule,
         FormsModule,
-        BrowserModule,
         RouterModule.forChild([
             {
-                path: "account",
+                path: "",
                 component: AppComponent,
                 children: [
                     { path: "", redirectTo: 'login', pathMatch: 'full' },
@@ -30,8 +27,7 @@ import { UserManager } from './../share/user.manager';
                 ]
             }
         ])
-    ],
-    providers: [UserManager]
+    ]
 })
 export class AccountModule {
 }

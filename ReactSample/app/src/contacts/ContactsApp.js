@@ -42,37 +42,6 @@ class SearchBar extends Component {
 
     constructor() {
         super();
-        console.log("ContactsApp");
-    }
-
-    componentWillMount() {
-        console.log("componentWillMount");
-    }
-
-    componentDidMount() {
-        console.log("componentDidMount");
-    }
-
-    componentWillUnmount() {
-        console.log("componentWillUnmount");
-    }
-
-    componentWillReceiveProps() {
-        console.log("componentWillReceiveProps");
-    }
-
-    shouldComponentUpdate() {
-        console.log("shouldComponentUpdate");
-
-        return true;
-    }
-
-    componentWillUpdate() {
-        console.log("componentWillUpdate");
-    }
-
-    componentDidUpdate() {
-        console.log("componentDidUpdate");
     }
 
     handleChange(event) {

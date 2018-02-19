@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 
-namespace WebApplication3
+namespace ReactDashboard
 {
     public class Startup
     {
@@ -42,12 +42,11 @@ namespace WebApplication3
                 RequestPath = new PathString("/ClientApp")
             });
 
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=React}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
