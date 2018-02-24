@@ -28,4 +28,5 @@ import { UserManager } from './share/user.manager';
     providers: [UserManager, AuthGuard2]
 })
 export class AppModuleShared {
+
 }
