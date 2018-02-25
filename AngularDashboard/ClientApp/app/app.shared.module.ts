@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AuthGuard2 } from "./share/auth.guard";
 import { UserManager } from './share/user.manager';
+import { MyHttpLogInterceptor } from './share/applicationhttpinterceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,7 @@ import { UserManager } from './share/user.manager';
     ],
     imports: [
         CommonModule,
-        HttpModule,
+        HttpClientModule,
         FormsModule,
         BrowserModule,
         RouterModule.forRoot([
@@ -25,7 +26,7 @@ import { UserManager } from './share/user.manager';
             { path: '**', redirectTo: 'home'  }
         ])
     ],
-    providers: [UserManager, AuthGuard2]
+    providers: [UserManager, AuthGuard2, { provide: HTTP_INTERCEPTORS, useClass: MyHttpLogInterceptor, multi: true }]
 })
 export class AppModuleShared {
 

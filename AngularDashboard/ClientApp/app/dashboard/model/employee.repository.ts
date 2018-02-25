@@ -1,5 +1,5 @@
 ﻿import { Injectable, Inject } from "@angular/core";
-import { Http, RequestOptions, Headers } from "@angular/http";
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
 import { Employee } from "./employee.model";
 import "rxjs/add/operator/map";
@@ -8,11 +8,11 @@ import "rxjs/add/operator/catch";
 @Injectable()
 export class EmployeeRepository {
 
-    constructor(private http: Http, @Inject("BASE_URL") private baseUrl: string) {
+    constructor(private http: HttpClient, @Inject("BASE_URL") private baseUrl: string) {
     }
 
-    getHeader(): Headers {
-        const headers = new Headers();
+    getHeader(): HttpHeaders {
+        const headers = new HttpHeaders();
         const authToken = localStorage.getItem("auth_token");
         headers.append("Authorization", `Bearer ${authToken}`);
 
@@ -24,7 +24,7 @@ export class EmployeeRepository {
         const headers = this.getHeader();
 
         return this.http.get(this.baseUrl + "api/employee/list", { headers})
-            .map(response => response.json() as Employee[]);
+            .map(response => response as Employee[]);
     }
 
     create(employee: Employee): Observable<any> {
@@ -34,11 +34,11 @@ export class EmployeeRepository {
         return this.http.post(this.baseUrl + "api/employee/create", employee, { headers })
             .map(response => {
 
-                if (response.ok) {
-                    console.log(response.statusText);
-                } else {
-                    console.log(response.statusText);
-                }
+                //if (response.status) {
+                //    console.log(response.);
+                //} else {
+                //    console.log(response.statusText);
+                //}
 
                 return response;
             })
@@ -50,8 +50,7 @@ export class EmployeeRepository {
 
     fileUpload(files: FileList): Observable<any>{
 
-        const options = new RequestOptions();
-        options.headers = this.getHeader();
+        const headers = this.getHeader();
 
         const formData = new FormData();
 
@@ -59,17 +58,17 @@ export class EmployeeRepository {
             formData.append("files", files[j], files[j].name);
         }
 
-        return this.http.post(this.baseUrl + "api/employee/upload", formData, options)
+        return this.http.post(this.baseUrl + "api/employee/upload", formData, { headers})
             .map(response => {
 
-                if (response.ok) {
+                //if (response.ok) {
 
-                    var uploadResult = response.json() as UploadResult;
+                    var uploadResult = response as UploadResult;
 
                     return uploadResult.path;
-                } else {
-                    console.log(response.statusText);
-                }
+                //} else {
+                //    console.log(response.statusText);
+                //}
             })
             .catch(error => {
                 console.log(error);
@@ -78,6 +77,6 @@ export class EmployeeRepository {
     }
 }
 
-class UploadResult {
+interface UploadResult {
     path: string;
 }

@@ -1,5 +1,5 @@
 ﻿import { Injectable, Inject, PLATFORM_ID } from "@angular/core";
-import { Http } from "@angular/http";
+import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
 import { isPlatformServer, isPlatformBrowser } from '@angular/common';
 import "rxjs/add/operator/map";
@@ -11,7 +11,7 @@ export class UserManager {
 
     tokenKey = "auth_token";
 
-    constructor(private http: Http,
+    constructor(private http: HttpClient,
                 @Inject("BASE_URL") private baseUrl: string,
                 @Inject(PLATFORM_ID) private platformId: Object) {
 
@@ -31,7 +31,7 @@ export class UserManager {
         })
         .map(response => {
 
-            var credential = response.json() as Credential;
+            var credential = response as Credential;
 
             localStorage.setItem(this.tokenKey, credential.token);
 
@@ -43,6 +43,15 @@ export class UserManager {
               console.log(error);
               return Observable.throw(error.json().error || "Server error");
           });
+    }
+
+    reset() {
+        localStorage.removeItem(this.tokenKey);
+    }
+
+    getToken(): string | null {
+        const authToken = localStorage.getItem("auth_token");
+        return authToken;
     }
 
     isLoggedIn() {
