@@ -36,7 +36,7 @@ namespace AngularDashboard.Controllers
             var identity = await GetClaimsIdentity(model.UserName, model.Password);
             if (identity == null)
             {
-                return BadRequest(Errors.AddErrorToModelState("login_failure", "Invalid username or password.", ModelState));
+                return BadRequest(Errors.AddErrorToModelState(LoginResponseType.InvalidUserNameOrPassword.ToString(), "Invalid username or password.", ModelState));
             }
 
             var jwt = await Tokens.GenerateJwt(identity, _jwtFactory, model.UserName, _jwtOptions, new JsonSerializerSettings { Formatting = Formatting.Indented });
@@ -63,5 +63,10 @@ namespace AngularDashboard.Controllers
             // Credentials are invalid, or account doesn't exist
             return await Task.FromResult<ClaimsIdentity>(null);
         }
+    }
+
+    enum LoginResponseType
+    {
+        InvalidUserNameOrPassword = 1,
     }
 }

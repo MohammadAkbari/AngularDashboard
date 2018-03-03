@@ -41,7 +41,8 @@ export class UserManager {
           })
           .catch(error => {
               console.log(error);
-              return Observable.throw(error.json().error || "Server error");
+
+              return Observable.throw(error.error || "Server error");
           });
     }
 

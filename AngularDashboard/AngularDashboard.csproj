@@ -37,6 +37,7 @@
     <None Remove="ClientApp\app\dashboard\model\product.repository.ts" />
     <None Remove="ClientApp\app\share\ApplicationHttpInterceptor.ts" />
     <None Remove="ClientApp\app\share\auth.guard.ts" />
+    <None Remove="ClientApp\app\share\LoginResponseType.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,6 +55,7 @@
     <TypeScriptCompile Include="ClientApp\app\share\ApplicationHttpInterceptor.ts" />
     <TypeScriptCompile Include="ClientApp\app\share\credential.model.ts" />
     <TypeScriptCompile Include="ClientApp\app\account\model\login.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\share\LoginResponseType.ts" />
     <TypeScriptCompile Include="ClientApp\app\share\user.manager.ts" />
     <TypeScriptCompile Include="ClientApp\app\dashboard\model\address.repository.ts" />
     <TypeScriptCompile Include="ClientApp\app\dashboard\model\idName.model.ts" />

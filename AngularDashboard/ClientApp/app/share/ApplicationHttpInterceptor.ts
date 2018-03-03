@@ -39,6 +39,9 @@ export class MyHttpLogInterceptor implements HttpInterceptor {
                 console.log('HttpEvent', ev);
             })
             .catch(response => this.handleAuthError(response))
-            .catch(response => { console.log("HERE"); return response; });
+            .catch(response => {
+                console.log("HERE");
+                return Observable.throw(response);
+            });
     }
 }
